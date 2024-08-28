@@ -1,0 +1,17 @@
+table {
+    border-spacing: 3px;
+    
+}
+th, td {
+    border: 1px solid black;
+    padding: 3px;
+}
+.webDev {
+    background-color: turquoise;
+}
+.ML {
+    background-color: yellow;
+}
+.ADS {
+    background-color: green;
+}
