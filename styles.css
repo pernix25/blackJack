@@ -24,6 +24,7 @@ a:hover {
 }
 .poem {
     text-align: center;
+    clear: both;
 }
 img {
     float: right;
