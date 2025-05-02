@@ -9,26 +9,27 @@ private:
     std::vector<int> values;
     std::vector<std::string> suits;
     bool isDealer;
+    int length;
 public:
     // constructor
     Hand(bool dealer);
 
     // adds a card to the hand
-    void addCard(int& value, std::string& suit);
+    void addCard(const int& value, const std::string& suit);
 
     // gets length of hand
-    int length();
+    int getLength() const;
 
     // gets dealer status
-    bool getDealer();
+    bool getDealer() const;
     // sets dealer status
     void setDealer(bool d);
 
     // calculates the value of the hand
-    int calcHand();
+    int calcHand() const;
 
     // prints hand
-    void printHand();
+    void printHand() const;
 };
 
 #endif //BJ_CLASSES_H

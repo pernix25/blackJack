@@ -137,10 +137,10 @@ int main() {
         // compare hands for end of round
         if (playerValue == dealerValue) {
             cout << "Tie" << endl;
-        } else if (playerValue > 21 || dealerValue > playerValue) {
+        } else if ((playerValue > 21 || dealerValue > playerValue) && dealerValue < 21) {
             cout << "Dealer wins" << endl;
             balance = balance - bet;
-        } else if (playerValue == 21 || playerValue > dealerValue) {
+        } else if ((playerValue == 21 || playerValue > dealerValue) || dealerValue > 21) {
             cout << "Player wins!" << endl;
             balance = balance + bet;
         }

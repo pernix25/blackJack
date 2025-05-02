@@ -3,28 +3,31 @@
 #include <string>
 #include "bj_classes.h"
 
-Hand::Hand(bool dealer) {
+Hand::Hand(const bool dealer) {
     isDealer = dealer;
+    length = 0;
 }
 
-void Hand::addCard(int& value, std::string& suit) {
+void Hand::addCard(const int& value, const std::string& suit) {
     values.push_back(value);
     suits.push_back(suit);
+
+    this->length++;
 }
-int Hand::length() {
-    return values.size();
+int Hand::getLength() const {
+    return this->length;
 }
-bool Hand::getDealer() {
+bool Hand::getDealer() const {
     return isDealer;
 }
-void Hand::setDealer(bool d) {
+void Hand::setDealer(const bool d) {
     this->isDealer = d;
 }
-int Hand::calcHand() {
+int Hand::calcHand() const {
     int total = 0;
     int numAces = 0;
 
-    for (int value : values) {
+    for (const int value : values) {
         switch (value) {
             case 1:
                 numAces++;
@@ -55,12 +58,12 @@ int Hand::calcHand() {
     }
     return total;
 }
-void Hand::printHand() {
-    int handLength = this->length();
+void Hand::printHand() const {
+    const int handLength = getLength();
 
-    if (this->getDealer()) {
-        int visibleCardValue = values.back();
-        std::string visibleCardSuit = suits.back();
+    if (getDealer()) {
+        const int& visibleCardValue = values.back();
+        const std::string& visibleCardSuit = suits.back();
 
         switch(visibleCardValue) {
             case 1:
@@ -117,7 +120,7 @@ void Hand::printHand() {
 
         i = 0;
         do {
-            int visibleCardValue = this->values[i];
+            const int visibleCardValue = this->values[i];
             switch(visibleCardValue) {
                 case 1:
                     std::cout << "|A      |";
@@ -152,7 +155,7 @@ void Hand::printHand() {
 
         i = 0;
         do {
-            int visibleCardValue = this->values[i];
+            const int visibleCardValue = this->values[i];
             switch(visibleCardValue) {
                 case 1:
                     std::cout << "|      A|";
