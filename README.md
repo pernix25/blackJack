@@ -1,1 +1,1 @@
-run black_jack.py and play Black Jack
+run black_jack.py or black_jack.cpp and play Black Jack
